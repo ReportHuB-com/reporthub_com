@@ -1,0 +1,206 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us</title>
+  <style>
+    :root{
+      --bg:#0f1720;
+      --card:#0b1220;
+      --accent:#00b4d8;
+      --muted:#94a3b8;
+      --radius:14px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#071019);
+      color:#e6eef6;
+    }
+
+    /* ✅ Responsive Navigation Bar */
+    header {
+      background-color: #0d1115;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+    }
+
+    .logo {
+      color: var(--accent);
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #575757;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.8em;
+      color: var(--accent);
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #0d1115;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+      }
+      nav.active {
+        display: flex;
+      }
+      .menu-icon {
+        display: block;
+      }
+    }
+
+    /* ✅ About Page Content */
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px;
+    }
+    .card{
+      width:100%;
+      max-width:920px;
+      background:linear-gradient(180deg,var(--card),#08101a);
+      border-radius:var(--radius);
+      box-shadow:0 10px 30px rgba(2,6,23,0.6);
+      padding:28px;
+      backdrop-filter: blur(6px);
+    }
+    .head{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .logo-box{
+      height:68px;
+      width:68px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#7c3aed);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:22px;
+      color:#031323;
+    }
+    h1{margin:0;font-size:24px}
+    p.lead{color:var(--muted);margin:10px 0 18px}
+    .content{line-height:1.7;color:#dce9f6}
+    a.btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:10px;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,0.06);
+      background:linear-gradient(90deg, rgba(6,182,212,0.06), rgba(124,58,237,0.03));
+      color:var(--accent);
+      font-weight:600;
+      margin-top:14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🧭 Navigation Bar -->
+  <header>
+    <div class="logo">|ReportHuB|</div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <nav id="navbar">
+      <a href="../index.html">Home</a>
+       
+    </nav>
+  </header>
+
+  <!-- 💬 About Us Section -->
+  <div class="wrap">
+    <div class="card">
+      <div class="head">
+        <div class="logo-box">US</div>
+        <div>
+          <h1>About Us</h1>
+          <p class="lead">
+           Welcome to our platform, where committed professionals and motivated learners come together to advance knowledge and discovery.
+We are a dedicated educational space committed to advancing teaching, learning, scholarly work, and innovative research. Our mission is to provide clear, reliable, and accessible resources that support students, educators, and researchers in achieving academic and professional excellence.
+By combining rigorous content with modern learning tools, we foster an environment that encourages curiosity, critical thinking, and meaningful exploration. We are committed to building a community grounded in knowledge, collaboration, and continuous growth.
+
+          </p>
+        </div>
+      </div>
+
+      <div class="content">
+        <h2>Our Vision</h2>
+        <p>
+        Our vision is to create a leading global platform where learning, research, and innovation thrive—empowering individuals around the world to expand knowledge, challenge ideas, and contribute meaningfully to humanity. We aim to inspire a community of dedicated learners and professionals who pursue excellence, embrace discovery, and drive positive change through education and innovation.
+
+      <h1>Our Core Values</h1>
+      <ul>
+        <li>Inclusivity: We welcome diverse perspectives and ensure learning opportunities are accessible to all.</li>
+        <li>Excellence: We uphold the highest standards in education, research, and innovation.</li>
+        <li>Integrity: We act with honesty, transparency, and responsibility in all our work.</li>
+        <li>Innovation: We encourage creativity, discovery, and forward-thinking solutions that improve lives.</li>
+        <li>Collaboration: We believe in the power of shared knowledge and collective effort to achieve meaningful progress</li>
+        <li>Empowerment: We support learners and professionals in reaching their full potential and contributing positively to society.</li>
+
+      </ul>  
+      </p>
+
+        <h2>Who We Are</h2>
+        <p>
+        We are a dedicated team of educators, researchers, and professionals committed to advancing learning, fostering innovation, and supporting meaningful development. Guided by a strong foundation of integrity and excellence, we work to create reliable, accessible, and high-quality educational resources for individuals across diverse fields.
+Our platform brings together expertise, experience, and a shared commitment to progress—empowering learners and professionals to expand their knowledge, enhance their skills, and contribute confidently to a rapidly evolving world.
+
+        </p>
+
+        <h2>Our Purpose</h2>
+        <p>
+          Our purpose is to advance education, research, and innovation by providing dependable, accessible, and high-quality learning resources for individuals worldwide. We aim to support meaningful growth by equipping learners and professionals with the knowledge, skills, and tools they need to excel in their fields and contribute positively to society.
+Through a commitment to integrity, inclusivity, and continuous improvement, we strive to create a learning environment that encourages exploration, strengthens understanding, and fosters long-term development.
+
+
+        </p>
+
+        <a class="btn" href="../index.html">Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navbar').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

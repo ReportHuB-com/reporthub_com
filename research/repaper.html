@@ -1,0 +1,233 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Research Papers</title>
+  <style>
+    :root{
+      --bg:#0f1720;
+      --card:#0b1220;
+      --accent:#00b4d8;
+      --muted:#94a3b8;
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      background:linear-gradient(180deg,var(--bg),#071019);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* NAV */
+    header{
+      background:#0d1115;
+      padding:10px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border-bottom:1px solid #222;
+      position:sticky;
+      top:0;
+      z-index:50;
+    }
+    .logo{color:var(--accent);font-weight:700}
+    .menu-icon{display:none;color:var(--accent);font-size:22px;cursor:pointer}
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{color:#fff;text-decoration:none;padding:8px 10px;border-radius:6px}
+    nav a:hover{background:rgba(255,255,255,0.03)}
+    .search{padding:6px 10px;border-radius:8px;border:none;background:#0b1318;color:#e6eef6}
+
+    @media (max-width:700px){
+      .menu-icon{display:block}
+      nav{display:none;position:absolute;top:56px;right:0;width:100%;flex-direction:column;background:#0d1115;padding:12px 0}
+      nav.active{display:flex}
+      nav a{display:block;padding:12px 10px}
+      .search{width:86%;margin:8px auto}
+    }
+
+    /* Page header */
+    .page-hero{padding:42px 20px;text-align:center}
+    .page-hero h1{margin:0;font-size:28px;color:var(--accent)}
+    .page-hero p{color:var(--muted);margin:10px auto;max-width:820px}
+
+    /* Grid */
+    .container{max-width:1100px;margin:0 auto;padding:18px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+
+    .paper-card{
+      background:linear-gradient(180deg,var(--card),#08101a);
+      padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
+      transition:transform .18s ease,box-shadow .18s;
+    }
+    .paper-card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+    .paper-title{color:var(--accent);margin:0 0 8px;font-size:16px}
+    .paper-desc{color:#d3dceb;font-size:14px;line-height:1.45;margin-bottom:12px}
+    .paper-meta{display:flex;gap:10px;align-items:center;justify-content:space-between}
+    .btn{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#001018;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600}
+    .small{color:var(--muted);font-size:13px}
+    footer{background:#0d1115;color:#9aa6b2;text-align:center;padding:16px;margin-top:28px;border-top:1px solid #222}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <div class="logo">|ReportHuB|</div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <nav id="navbar">
+      <a href="../../index.html">Home</a>
+      <input id="globalSearch" class="search" placeholder="Search papers..." aria-label="Search papers"/>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <h1>Research Papers</h1>
+    <p>Browse curated political and economic research papers. Click a card to open the paper PDF.</p>
+  </section>
+
+  <main class="container">
+    <div class="grid" id="papersGrid">
+
+      <!-- CARDS START -->
+      <article class="paper-card" data-search="kashmir conflict india pakistan">
+        <h3 class="paper-title">Bridges and Boundaries: A Comparative Study of Islam and Hinduism
+</h3>
+        <p class="paper-desc">Islam and Hinduism, two of the most ancient and deeply revered faith traditions, have guided the spiritual lives of billions across centuries. Islam, revealed to the Prophet Muhammad (peace be upon him) in the 7th century CE.. Read More </p>
+        <div class="paper-meta"><span class="small">Author: Dr. Imtiyaz Ahmad Batti  </span><a class="btn" href="../research\A-Comparative-Study.docx" target="_blank">Open PDF</a></div>
+      </article>
+
+      <article class="paper-card" data-search="democratic practice jammu kashmir">
+        <h3 class="paper-title">Between Alliances and Autonomy: Turkey’s Geopolitical Strategy in a Multipolar World</h3>
+        <p class="paper-desc">This paper examines Turkey’s evolving geopolitical strategy in a multipolar world, with a focus on its complex ties to NATO, Russia, and China. Under President Recep Tayyip Erdoğan, Turkey has shifted from a traditionally Western-aligned state...Read More</p>
+        <div class="paper-meta"><span class="small">Author:  Dr. Imtiyaz Ahmad Batti </span><a class="btn" href="../research\Between-Alliances-and-Autonomy-Turkey’s.docx" target="_blank">Open PDF</a></div>
+      </article>
+
+      <article class="paper-card" data-search="digital democracy social media">
+        <h3 class="paper-title">Central Asian Influence on Kashmir: Unveiling the Cultural and Artistic Heritage</h3>
+        <p class="paper-desc">This study explores Central Asia’s lasting impact on Kashmir’s cultural and artistic heritage through trade, migration, and Sufi networks. It highlights influences in architecture, textiles, language, and spirituality, tracing origins to regions like Samarkand and Bukhara. Using qualitative analysis..Read more</p>
+        <div class="paper-meta"><span class="small">Author:  Dr. Imtiyaz Ahmad Batti </span><a class="btn" href="../research\Central-Asian-Influence-on-Kashmir-Unveiling-the-Cultural-and-Artistic-Heritage.docx" target="_blank">Open PDF</a></div>
+      </article>
+
+      <article class="paper-card" data-search="economic reforms india">
+        <h3 class="paper-title">Cross-Border Terrorism and Its Impact on Indo-Pak Peace Efforts</h3>
+        <p class="paper-desc">This research paper explores the long-lasting concern of cross-border terrorism and its profound influence on promoting peace between India and Pakistan. Since their freedom in 1947, the mutual relationship between these two South Asian nations has been deteriorated by wars...Read more</p>
+        <div class="paper-meta"><span class="small">Author: Dr. Imtiyaz Ahmad Batti </span><a class="btn" href="../research\Cross-Border-Terrorism-and-Its-Impact-on-Indo-Pak-Peace-Efforts.docx" target="_blank">Open PDF</a></div>
+      </article>
+
+      <article class="paper-card" data-search="foreign policy india 2022">
+        <h3 class="paper-title">Genocide or Asymmetric Warfare? Legal and Political Perspectives on the Gaza Conflict
+</h3>
+        <p class="paper-desc"> This study critically examines whether the ongoing Gaza conflict should be classified under international law as genocide or as a case of asymmetric warfare. The conflict, marked by repeated military engagements between the State of Israel and non-state actors such as Hamas, presents complex legal and political challenges...Read more</p>
+        <div class="paper-meta"><span class="small">Author: Dr. Imtiyaz Ahmad Batti </span><a class="btn" href="../research\Genocide-or-Asymmetric-Warfare.docx" target="_blank">Open PDF</a></div>
+      </article>
+
+      <article class="paper-card" data-search="climate policy asia">
+        <h3 class="paper-title">II Diplomacy: Civil Society and Peacebuilding Between India and Pakistan
+Abstract
+</h3>
+        <p class="paper-desc">India and Pakistan have shared a protracted history of hostility, marked by wars, border skirmishes, and political standstills since their partition in 1947. Formal diplomatic channels, often disrupted by recurring tensions, have struggled to sustain long-term peace...Read more</p>
+        <div class="paper-meta"><span class="small">Author: Dr. Imtiyaz Ahmad Batti </span><a class="btn" href="../research\II-Diplomacy.docx" target="_blank">Open PDF</a></div>
+      </article>
+
+      <article class="paper-card" data-search="education reform india">
+        <h3 class="paper-title">IMPERIALIS</h3>
+        <p class="paper-desc"> Various scholars have attempted to explain imperialism from various perspectives but also differentiate it from terms like colonialism....Read more</p>
+ 
+        <div class="paper-meta"><span class="small">Author: Dr. Imtiyaz Ahmad Batti </span><a class="btn" href="../research\imperialism.pdf" target="_blank">Open PDF</a></div>
+      </article>
+
+      <article class="paper-card" data-search="economic globalization south asia">
+        <h3 class="paper-title">Military Doctrines and Escalation Dynamics: Comparing India's 'Cold Start' with Pakistan's Tactical Nukes</h3>
+        <p class="paper-desc">South Asia remains one of the most volatile regions in the world, primarily due to the protracted rivalry between India and Pakistan—two nuclear-armed neighbors with a history of war, border skirmishes, and deep-rooted mistrust....Read more</p>
+        <div class="paper-meta"><span class="small">Author: Dr. Imtiyaz Ahmad Batti </span><a class="btn" href="../research\Military_Doctrines_Escalation_India_Pakistan.docx" target="_blank">Open PDF</a></div>
+      </article>
+
+      <article class="paper-card" data-search="human rights india 2021">
+        <h3 class="paper-title">New IMPERIALIS</h3>
+        <p class="paper-desc">New Imperialism refers to the wave of colonial expansion that began in the late nineteenth century and continued until WorldWarI. During this period, many European countries, 
+ 
+ the United States, and Japan ...Read more</p>
+        <div class="paper-meta"><span class="small">Author:  Dr. Imtiyaz Ahmad Batti </span><a class="btn" href="../research\new-imperalism.pdf" target="_blank">Open PDF</a></div>
+      </article>
+
+      <article class="paper-card" data-search="social justice women empowerment">
+        <h3 class="paper-title">Reassessing EU Foreign Policy: A Values-Based Response to the Israel-Palestine Democracy and Security Crisis
+</h3>
+        <p class="paper-desc">The Israel-Palestine conflict has entered a volatile and deeply concerning phase, characterized by acute democratic decline and intensifying instability on both sides. In Israel, the return of Prime Minister Benjamin Netanyahu has ushered in the most far-right government in the country's history...Read more</p>
+        <div class="paper-meta"><span class="small">Author: Dr. Imtiyaz Ahmad Batti </span><a class="btn" href="../research\Reassessing EU Foreign Policy A Values-Based-Response-to-the-Israel-Palestine-Democracy-and-Security-Crisis.docx" target="_blank">Open PDF</a></div>
+      </article>
+
+      <article class="paper-card" data-search="global politics peace research">
+        <h3 class="paper-title">Post-Arab Spring Political Landscapes: Continuity and Change in the Middle East</h3>
+        <p class="paper-desc">The Arab Spring, a series of popular uprisings that began in late 2010, represented a watershed moment in the political history of the Middle East and North Africa (MENA) region. It was driven by deep-rooted grievances such as political repression, economic hardship, corruption, and the denial of basic ...Read more</p>
+        <div class="paper-meta"><span class="small">Author: Dr. Imtiyaz Ahmad Batti </span><a class="btn" href="../research\research paper Kashmir Dispute Historical Perspectives and Contemporary Challenges.docx" target="_blank">Open PDF</a></div>
+      </article>
+
+      <article class="paper-card" data-search="policy making governance india">
+        <h3 class="paper-title">The Concept of Tawhid (Monotheism) in Islamic Theology: Foundations and Implications</h3>
+        <p class="paper-desc">Tawhid, the belief in the 
+absolute oneness and uniqueness of Allah, is the cornerstone of Islamic theology and spirituality. It shapes the Muslim worldview, defining the relationship between the Creator and His creation while influencing religious practice, ethical behavior, and social order...Read more</p>
+        <div class="paper-meta"><span class="small">Author: Dr. Imtiyaz Ahmad Batti </span><a class="btn" href="../research\The Concept of Tawhid (Monotheism) in Islamic Theology.docx" target="_blank">Open PDF</a></div>
+      </article>
+
+      <article class="paper-card" data-search="digital economy india growth">
+        <h3 class="paper-title">The New Great Game: Powers in Play</h3>
+        <p class="paper-desc">The “New Great Game” encapsulates the modern geopolitical rivalry in Central Asia among global and regional powers—including Russia, China, the United States, India, Turkey, and Iran—each striving to secure influence over a region endowed with energy resources, strategic trade corridors, and geostrategic value. Unlike the 19th-century imperial confrontation between Britain and Russia, this contemporary ...Read more</p>
+        <div class="paper-meta"><span class="small">Author: Dr. Imtiyaz Ahmad Batti </span><a class="btn" href="../research\The New Great Game Powers in Play.docx" target="_blank">Open PDF</a></div>
+      </article>
+
+      <article class="paper-card" data-search="agriculture policy india 2021">
+        <h3 class="paper-title">Resonance of Grievance: Youth Mobilization and the Evolving Face of Militancy in Kashmir</h3>
+        <p class="paper-desc">This study explores the evolving dynamics of youth involvement in resistance and militancy in Kashmir, a region marked by prolonged political conflict, militarization, and contested national identity. Drawing on qualitative methodologies........Read more</p>
+        <div class="paper-meta"><span class="small">Author: Dr. Imtiyaz Ahmad Batti </span><a class="btn" href="../research\Youth, Resistance and Militancy in Kashmir.docx" target="_blank">Open PDF</a></div>
+      </article>
+
+      <article class="paper-card" data-search="youth politics india future">
+        <h3 class="paper-title">International Organizatio</h3>
+        <p class="paper-desc"> International Organizations(IOs) are form alinstitutional structures which are created by multilateral agreement among nation-states.Their purpose is to foster international cooperation...Read more</p>
+        <div class="paper-meta"><span class="small">Author: Dr. Imtiyaz Ahmad Batti </span><a class="btn" href="../research/international organization.pdf" target="_blank">Open PDF</a></div>
+      </article>
+
+      <!--<article class="paper-card" data-search="social media influence politics">
+        <h3 class="paper-title">Influence of Social Media on Political Campaigns</h3>
+        <p class="paper-desc">unable to Reach locked by AUthor</p>
+        <div class="paper-meta"><span class="small">Author:   Dr. Imtiyaz Ahmad Batti </span><a class="btn" href="#/file.pdf" target="_blank">Open PDF</a></div>
+      </article>-->
+      <!-- CARDS END -->
+
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Research Portal | Designed by 
+    <a href="https://mohsinsadiq.com" style="color:#00b4d8; text-decoration:none;">MUHAMMAD MOHSIN SADIQ MUGHAL</a>
+  </footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navbar').classList.toggle('active');
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.getElementById('papersGrid');
+    const globalSearch = document.getElementById('globalSearch');
+    if (!grid || !globalSearch) return;
+    const cards = grid.querySelectorAll('.paper-card');
+    globalSearch.addEventListener('input', (e) => {
+      const q = e.target.value.trim().toLowerCase();
+      cards.forEach(c => {
+        const text = (c.dataset.search + " " + c.textContent).toLowerCase();
+        c.style.display = text.includes(q) ? "block" : "none";
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
